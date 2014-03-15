@@ -58,30 +58,6 @@ Ext.define('LocationsDemo.view.Main', {
                                     }
                                 }
                             });
-                            //}}]
-                                /*alert(res);
-
-                            })
-                           /* Ext.Ajax.request({
-                                url: 'http://localhost:8080/openmrs/ws/rest/v1/location',
-                                method: 'GET',
-                                callback: function(opt, suc, res) {
-                                    console.log(res);
-                                    var m = new google.maps.Marker({
-                                        position: new google.maps.LatLng(0, 0),
-                                        map: gMap
-                                    });
-                                    /*alert(res);
-                                    for (var i=0;i<res.length;i++) {
-                                        var item = res[i];
-                                        var marker = new google.maps.Marker({
-                                            position: new google.maps.LatLng(item.latitude, item.longitude),
-                                            map: gMap
-                                        });
-                                        points.push(marker);
-                                    }
-                                }
-                            }); */
                         }
                     }
                 ]
