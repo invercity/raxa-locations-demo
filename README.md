@@ -4,10 +4,9 @@ raxa-locations-demo
 
 #### Functions:
 
-* Loading places, and showing it on map
+* Loading places, and showing it in the list
+* Basic map (for testing)
 
 #### To-do
 
-* Add listview
-* Add event handlers for place click, list item click
-* Add handler for search bar
+* Add loading markers to map
