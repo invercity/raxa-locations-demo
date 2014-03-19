@@ -34,7 +34,8 @@
         this.add([topToolbar, locationsList]);
     },
     onMapButtonTap: function () {
-        this.fireEvent("goToMapCommand", this);
+        Ext.Viewport.setActiveItem(2);
+        //this.fireEvent("goToMapCommand", this);
     },
     onLocationsListDisclose: function (list, record, target, index, evt, options) {
         this.fireEvent('showItemOnMapCommand', this, record);

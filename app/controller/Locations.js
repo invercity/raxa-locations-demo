@@ -17,7 +17,8 @@
 
     // Commands.
     goToMap: function () {
-        console.log("onNewNoteCommand");        
+        Ext.Viewport.setActiveIitem(2);
+        console.log('set')
     },
    showItem: function (list, record) {
         console.log("onEditNoteCommand");
@@ -30,6 +31,5 @@
     },
     init: function () {
         this.callParent(arguments);
-        console.log("init");
     }
 });

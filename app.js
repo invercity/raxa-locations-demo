@@ -20,8 +20,8 @@
     },
     models: ["Location"],
     stores: ["Locations"],
-    controllers: ["Locations"],
-    views: ["LocationsList", "LocationsListContainer"],
+    controllers: ["Locations","Map"],
+    views: ["LocationsList", "LocationsListContainer", "MapContainer"],
 
     launch: function () {
         // Destroy the #appLoadingIndicator element
@@ -29,6 +29,10 @@
         var locationsListContainer = {
             xtype: "locationslistcontainer"
         };
+        var mapContainer = {
+            xtype: "mapcontainer"
+        }
         Ext.Viewport.add(locationsListContainer);
+        Ext.Viewport.add(mapContainer);
     }
 });
