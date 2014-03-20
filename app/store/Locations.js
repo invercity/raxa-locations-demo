@@ -7,7 +7,7 @@
         model: "LocationsDemo.model.Location",
         proxy: {
             type: 'ajax',
-            url: 'https://api.raxa.io/ws/rest/v1/location?v=full',
+            url: 'https://api.raxa.io/ws/rest/v1/location?v=full&limit=100',
             reader:{
                 type: 'json',
                 root: 'results'

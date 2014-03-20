@@ -28,8 +28,8 @@ Ext.define("LocationsDemo.view.MapContainer", {
 
         var mapdemo = Ext.create('Ext.Map', {
             mapOptions : {
-                center : new google.maps.LatLng(37.381592, -122.135672),  //nearby San Fran
-                zoom : 12,
+                //center : new google.maps.LatLng(37.381592, -122.135672),
+                zoom : 2,
                 mapTypeId : google.maps.MapTypeId.ROADMAP,
                 navigationControl: true,
                 navigationControlOptions: {
@@ -37,34 +37,36 @@ Ext.define("LocationsDemo.view.MapContainer", {
                 }
             },
             mapListeners: {
-                /*dragstart: function() {
-                    var segmented = Ext.getCmp('segmented'),
-                        pressedButtons = segmented.getPressedButtons().slice(),
-                        trackingIndex = pressedButtons.indexOf(trackingButton);
-                    if (trackingIndex != -1) {
-                        pressedButtons.splice(trackingIndex, 1);
-                        segmented.setPressedButtons(pressedButtons);
-                    }
-                }*/
+
             },
 
             listeners: {
-                /*maprender: function(comp, map) {
-                    var marker = new google.maps.Marker({
-                        position: position,
-                        title : 'Sencha HQ',
-                        map: map
-                    });
-
-                    google.maps.event.addListener(marker, 'click', function() {
-                        infowindow.open(map, marker);
-                    });
-
-                    setTimeout(function() {
-                        map.panTo(position);
-                    }, 1000);
+                maprender: function(comp, map) {
+                    var store = Ext.getStore("Locations");
+                    store.load({
+                        callback: function(records, operation, success) {
+                            store.each(function(element) {
+                                if (element.data.latitude) {
+                                    var pos = new google.maps.LatLng(element.data.latitude, element.data.longitude);
+                                    var image = 'resources/icons/heart2.png';
+                                    var marker = new google.maps.Marker({
+                                        position: pos,
+                                        title : element.data.name,
+                                        icon: image,
+                                        map: map
+                                    });
+                                    google.maps.event.addListener(marker, 'click', function(event) {
+                                        Ext.Msg.alert('Info', 'Location name: ' + element.data.name, Ext.emptyFn);
+                                    });
+                                }
+                            });
+                            var position = new google.maps.LatLng(records[0].data.latitude, records[0].data.longitude);
+                            map.setCenter(position);
+                        },
+                        scope: this
+                    })
                 }
-                */
+
             }
         });
         this.add([topToolbar, mapdemo]);
