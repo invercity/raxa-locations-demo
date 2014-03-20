@@ -34,12 +34,28 @@
         this.add([topToolbar, locationsList]);
     },
     onMapButtonTap: function () {
-        Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi ,{ type: 'slide', direction: 'right' });
-        Ext.Viewport.setActiveItem(2);
+        this.goToPlaceOnMap(new google.maps.LatLng(37.381592, -122.135672), 2);
+        this.showMap();
         //this.fireEvent("goToMapCommand", this);
     },
+    showMap : function() {
+        Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi ,{ type: 'slide', direction: 'right' });
+        Ext.Viewport.setActiveItem(2);
+    },
+    goToPlaceOnMap : function(pos, zoom) {
+        var el = Ext.Viewport.items.getAt(1);
+        var map = el.items.getAt(1).getMap();
+        map.setCenter(pos);
+        map.setZoom(zoom);
+    },
     onLocationsListDisclose: function (list, record, target, index, evt, options) {
-        this.fireEvent('showItemOnMapCommand', this, record);
+        if (record.data.latitude) {
+            var position = new google.maps.LatLng(record.data.latitude, record.data.longitude);
+            this.goToPlaceOnMap(position, 14);
+            this.showMap();
+        }
+        else Ext.Msg.alert('Error', 'Missing location coordinates', Ext.emptyFn);
+        //this.fireEvent('showItemOnMapCommand', this, record);
     },
     config: {
         layout: {

@@ -31,7 +31,7 @@
         };
         var mapContainer = {
             xtype: "mapcontainer"
-        }
+        };
         Ext.Viewport.add(locationsListContainer);
         Ext.Viewport.add(mapContainer);
     }

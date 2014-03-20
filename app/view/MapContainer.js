@@ -36,9 +36,6 @@ Ext.define("LocationsDemo.view.MapContainer", {
                     style: google.maps.NavigationControlStyle.DEFAULT
                 }
             },
-            mapListeners: {
-
-            },
 
             listeners: {
                 maprender: function(comp, map) {
@@ -60,8 +57,6 @@ Ext.define("LocationsDemo.view.MapContainer", {
                                     });
                                 }
                             });
-                            var position = new google.maps.LatLng(records[0].data.latitude, records[0].data.longitude);
-                            map.setCenter(position);
                         },
                         scope: this
                     })
