@@ -5,8 +5,8 @@ raxa-locations-demo
 #### Functions:
 
 * Loading places, and showing it in the list
-* Basic map (for testing)
+* Displaying places on a map
 
 #### To-do
 
-* Add loading markers to map
+* Search/filter tool
