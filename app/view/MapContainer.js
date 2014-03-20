@@ -72,12 +72,16 @@ Ext.define("LocationsDemo.view.MapContainer", {
         this.add([topToolbar, mapdemo]);
     },
     onBackTap: function () {
+        Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi,{ type: 'slide', direction: 'left' });
         Ext.Viewport.setActiveItem(0);
-        //this.fireEvent("backToListCommand", this);
     },
     config: {
         layout: {
-            type: 'fit'
+            type: 'card'
+        },
+        animation: {
+            type: 'slide',
+            direction: 'right'
         }
     }
 });

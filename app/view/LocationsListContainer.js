@@ -34,6 +34,7 @@
         this.add([topToolbar, locationsList]);
     },
     onMapButtonTap: function () {
+        Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi ,{ type: 'slide', direction: 'right' });
         Ext.Viewport.setActiveItem(2);
         //this.fireEvent("goToMapCommand", this);
     },
@@ -42,7 +43,11 @@
     },
     config: {
         layout: {
-            type: 'fit'
+            type: 'card'
+        },
+        animation: {
+            type: 'slide',
+            direction: 'left'
         }
     }
 });
