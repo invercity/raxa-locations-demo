@@ -43,7 +43,8 @@
         Ext.Viewport.setActiveItem(2);
     },
     goToPlaceOnMap : function(pos, zoom) {
-        var el = Ext.Viewport.items.getAt(1);
+        // get map
+        var el = Ext.Viewport.items.getAt(2);
         var map = el.items.getAt(1).getMap();
         map.setCenter(pos);
         map.setZoom(zoom);

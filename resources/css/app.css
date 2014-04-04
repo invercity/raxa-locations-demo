@@ -127,7 +127,7 @@ right: 0.44em;
     position: absolute;
     min-width: 100%;
     min-height: 100%;
-    border: 1px solid #41598C;
+    border: 3px solid #41598C;
     -webkit-box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
     -moz-box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
     box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
@@ -136,11 +136,11 @@ right: 0.44em;
     -ms-border-radius: 0.5em;
     -o-border-radius: 0.5em;
     border-radius: 0.5em;
+
 }
 
 .login-view .x-field-text {
     width: 14em;
-    background-color: #eeeff0;
 }
 /* line 40, ../sass/app.scss */
 .login-view .x-field-text .x-input-el::-webkit-input-placeholder {

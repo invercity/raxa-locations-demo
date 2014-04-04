@@ -18,31 +18,47 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                 cls: 'logo'
             },
             {
+                xtype: 'label',
+                html: 'Login failed. Please enter the correct credentials.',
+                itemId: 'signInFailedLabel',
+                hidden: true,
+                hideAnimation: 'fadeOut',
+                showAnimation: 'fadeIn',
+                style: 'color:#990000;margin:5px 0px;'
+            },
+            {
                 xtype: 'formpanel',
-                scrollable: true,
+                scrollable: null,
                 items: [
                     {
-                        xtype: 'component',
-                        cls: 'shadow'
-                    },
-                    {
-                        xtype: 'textfield',
-                        placeHolder: 'Email',
-                        name: 'email',
-                        cls: 'email'
-                    },
-                    {
-                        xtype: 'passwordfield',
-                        placeHolder: 'Password',
-                        name: 'password',
-                        cls: 'password'
+                        xtype: 'fieldset',
+                        items: [
+                            {
+                                xtype: 'textfield',
+                                placeHolder: 'Email',
+                                name: 'email',
+                                required: true,
+                                cls: 'email'
+                            },
+                            {
+                                xtype: 'passwordfield',
+                                placeHolder: 'Password',
+                                name: 'password',
+                                required: true,
+                                cls: 'password'
+                            }
+                        ]
                     }
                 ]
-            },
+            }
+            ,
             {
                 xtype: 'button',
                 cls: 'login-btn',
-                text: 'Log In'
+                text: 'Log In',
+                handler: function() {
+                    Ext.Viewport.setActiveItem(1);
+                }
             }
         ]
     }

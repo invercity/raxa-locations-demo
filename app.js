@@ -37,7 +37,7 @@
             xtype: "logincontainer"
         };
         Ext.Viewport.add(loginContainer);
-        //Ext.Viewport.add(locationsListContainer);
-        //Ext.Viewport.add(mapContainer);
+        Ext.Viewport.add(locationsListContainer);
+        Ext.Viewport.add(mapContainer);
     }
 });

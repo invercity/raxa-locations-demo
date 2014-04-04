@@ -7,8 +7,6 @@ Ext.define("LocationsDemo.view.MapContainer", {
 
     initialize: function () {
 
-        this.callParent(arguments);
-
         var backButton = {
             xtype: "button",
             text: 'Back',
@@ -68,7 +66,7 @@ Ext.define("LocationsDemo.view.MapContainer", {
     },
     onBackTap: function () {
         Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi,{ type: 'slide', direction: 'left' });
-        Ext.Viewport.setActiveItem(0);
+        Ext.Viewport.setActiveItem(1);
     },
     config: {
         layout: {
