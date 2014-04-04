@@ -5,7 +5,13 @@
         */
 html, body {
     height: 100%;
-    background-color: #1985D0
+    /*background-color: #1985D0*/
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #5775b5), color-stop(100%, #3f5d9b));
+    background-image: -webkit-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -moz-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -o-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -ms-radial-gradient(#5775b5, #3f5d9b);
+    background-image: radial-gradient(#5775b5, #3f5d9b);
 }
 
 #appLoadingIndicator {
@@ -88,4 +94,105 @@ right: 0.44em;
 .notes-list-empty-text 
 {
     padding:10px;
+}
+
+.login-view {
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #5775b5), color-stop(100%, #3f5d9b));
+    background-image: -webkit-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -moz-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -o-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -ms-radial-gradient(#5775b5, #3f5d9b);
+    background-image: radial-gradient(#5775b5, #3f5d9b);
+}
+
+.login-view .logo {
+    background: transparent url("../images/raxaLogo.png") no-repeat center center;
+    background-size: 200px 182px;
+    width: 200px;
+    height: 182px;
+    margin: 2em auto;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .login-view .logo {
+        background-image: url("../images/raxaLogo@2x.png");
+    }
+}
+
+.login-view .x-form {
+    margin-bottom: 1em;
+}
+
+.login-view .shadow {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    border: 1px solid #41598C;
+    -webkit-box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
+    -moz-box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
+    box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    border-radius: 0.5em;
+}
+
+.login-view .x-field-text {
+    width: 14em;
+    background-color: #eeeff0;
+}
+/* line 40, ../sass/app.scss */
+.login-view .x-field-text .x-input-el::-webkit-input-placeholder {
+    color: #b3b3b3;
+}
+
+.login-view .email {
+    border-bottom: 1px solid #d3d3d4;
+    display: inline-block;
+    margin: 1px 1px 0 1px;
+    -webkit-border-radius: 0.5em 0.5em 0 0;
+    -moz-border-radius: 0.5em 0.5em 0 0;
+    -ms-border-radius: 0.5em 0.5em 0 0;
+    -o-border-radius: 0.5em 0.5em 0 0;
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.login-view .password {
+    border-top: 1px solid #f7f7f8;
+    margin: 0 1px 1px 1px;
+    -webkit-border-radius: 0 0 0.5em 0.5em;
+    -moz-border-radius: 0 0 0.5em 0.5em;
+    -ms-border-radius: 0 0 0.5em 0.5em;
+    -o-border-radius: 0 0 0.5em 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+.login-view .login-btn {
+    width: 14em;
+    border: none;
+    margin-bottom: 6em;
+    min-height: 2.2em;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eaebec), color-stop(100%, #b9bfc7));
+    background-image: -webkit-linear-gradient(#eaebec, #b9bfc7);
+    background-image: -moz-linear-gradient(#eaebec, #b9bfc7);
+    background-image: -o-linear-gradient(#eaebec, #b9bfc7);
+    background-image: -ms-linear-gradient(#eaebec, #b9bfc7);
+    background-image: linear-gradient(#eaebec, #b9bfc7);
+    -webkit-box-shadow: 0 1px 1px #f2f2f2 inset, 0 1px 3px #444444;
+    -moz-box-shadow: 0 1px 1px #f2f2f2 inset, 0 1px 3px #444444;
+    box-shadow: 0 1px 1px #f2f2f2 inset, 0 1px 3px #444444;
+}
+
+.login-view .login-btn .x-button-label {
+    color: #565655;
+}
+
+.login-view .login-btn.x-button-pressing {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cfd1d4), color-stop(100%, #9da5b0));
+    background-image: -webkit-linear-gradient(#cfd1d4, #9da5b0);
+    background-image: -moz-linear-gradient(#cfd1d4, #9da5b0);
+    background-image: -o-linear-gradient(#cfd1d4, #9da5b0);
+    background-image: -ms-linear-gradient(#cfd1d4, #9da5b0);
+    background-image: linear-gradient(#cfd1d4, #9da5b0);
 }
