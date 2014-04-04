@@ -123,22 +123,6 @@ right: 0.44em;
     margin-bottom: 1em;
 }
 
-.login-view .shadow {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    border: 3px solid #41598C;
-    -webkit-box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
-    -moz-box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
-    box-shadow: 0 1px 2px #666666 inset, 0 1px 1px #7f94bd;
-    -webkit-border-radius: 0.5em;
-    -moz-border-radius: 0.5em;
-    -ms-border-radius: 0.5em;
-    -o-border-radius: 0.5em;
-    border-radius: 0.5em;
-
-}
-
 .login-view .x-field-text {
     width: 14em;
 }
@@ -147,7 +131,7 @@ right: 0.44em;
     color: #b3b3b3;
 }
 
-.login-view .email {
+.login-view .login {
     border-bottom: 1px solid #d3d3d4;
     display: inline-block;
     margin: 1px 1px 0 1px;

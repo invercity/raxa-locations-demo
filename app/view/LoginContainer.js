@@ -35,10 +35,10 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                         items: [
                             {
                                 xtype: 'textfield',
-                                placeHolder: 'Email',
-                                name: 'email',
+                                placeHolder: 'Login',
+                                name: 'login',
                                 required: true,
-                                cls: 'email'
+                                cls: 'login'
                             },
                             {
                                 xtype: 'passwordfield',
