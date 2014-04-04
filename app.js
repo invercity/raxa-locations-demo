@@ -21,7 +21,7 @@
     models: ["Location"],
     stores: ["Locations"],
     controllers: ["Locations","Map"],
-    views: ["LocationsList", "LocationsListContainer", "MapContainer", "Login"],
+    views: ["LocationsList", "LocationsListContainer", "MapContainer", "LoginContainer"],
 
     launch: function () {
         Ext.Loader.setConfig({enabled: true});

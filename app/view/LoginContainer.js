@@ -1,7 +1,7 @@
 /**
  * Created by invercity on 04.04.14.
  */
-Ext.define("LocationsDemo.view.Login", {
+Ext.define("LocationsDemo.view.LoginContainer", {
     extend: 'Ext.Container',
     alias: "widget.logincontainer",
     config: {
