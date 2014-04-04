@@ -21,9 +21,10 @@
     models: ["Location"],
     stores: ["Locations"],
     controllers: ["Locations","Map"],
-    views: ["LocationsList", "LocationsListContainer", "MapContainer"],
+    views: ["LocationsList", "LocationsListContainer", "MapContainer", "LoginContainer"],
 
     launch: function () {
+        Ext.Loader.setConfig({enabled: true});
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
         var locationsListContainer = {
@@ -32,6 +33,10 @@
         var mapContainer = {
             xtype: "mapcontainer"
         };
+        var loginContainer = {
+            xtype: "logincontainer"
+        };
+        Ext.Viewport.add(loginContainer);
         Ext.Viewport.add(locationsListContainer);
         Ext.Viewport.add(mapContainer);
     }

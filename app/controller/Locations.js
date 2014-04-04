@@ -20,7 +20,7 @@
         Ext.Viewport.setActiveIitem(2);
         console.log('set')
     },
-   showItem: function (list, record) {
+    showItem: function (list, record) {
         console.log("onEditNoteCommand");
     },
     // Base Class functions.
