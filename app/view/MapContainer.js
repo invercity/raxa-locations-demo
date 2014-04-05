@@ -66,7 +66,7 @@ Ext.define("LocationsDemo.view.MapContainer", {
     },
     onBackTap: function () {
         Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi,{ type: 'slide', direction: 'left' });
-        Ext.Viewport.setActiveItem(1);
+        Ext.Viewport.setActiveItem('locationslistcontainer');
     },
     config: {
         layout: {

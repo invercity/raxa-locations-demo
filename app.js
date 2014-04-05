@@ -21,10 +21,11 @@
     models: ["Location"],
     stores: ["Locations"],
     controllers: ["Locations","Map"],
-    views: ["LocationsList", "LocationsListContainer", "MapContainer", "LoginContainer"],
+    views: ["LocationsList", "LocationsListContainer", "MapContainer", "LoginContainer", "MenuContainer"],
 
     launch: function () {
         Ext.Loader.setConfig({enabled: true});
+        Ext.Viewport.innerElement.addCls('viewport-inner');
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
         var locationsListContainer = {
@@ -36,7 +37,11 @@
         var loginContainer = {
             xtype: "logincontainer"
         };
+        var menuContainer = {
+            xtype: 'mainmenu'
+        }
         Ext.Viewport.add(loginContainer);
+        Ext.Viewport.add(menuContainer);
         Ext.Viewport.add(locationsListContainer);
         Ext.Viewport.add(mapContainer);
     }
