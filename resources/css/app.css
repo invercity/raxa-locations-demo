@@ -234,3 +234,12 @@ right: 0.44em;
 .x-button-mainmenu.x-button-pressing, .x-button-mainmenu.x-button-pressing .x-button-label, .x-button-mainmenu.x-button-pressing .x-badge, .x-button-login.x-button-pressing, .x-button-login.x-button-pressing .x-button-label, .x-button-login.x-button-pressing .x-badge {
     color: #888;
 }
+
+.x-toolbar {
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #5775b5), color-stop(100%, #3f5d9b));
+    background-image: -webkit-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -moz-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -o-radial-gradient(#5775b5, #3f5d9b);
+    background-image: -ms-radial-gradient(#5775b5, #3f5d9b);
+    background-image: radial-gradient(#5775b5, #3f5d9b);
+}
