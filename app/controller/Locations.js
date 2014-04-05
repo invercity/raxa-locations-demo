@@ -3,33 +3,53 @@
     extend: "Ext.app.Controller",
     config: {
         refs: {
-            // We're going to lookup our views by xtype.
-            locationsListContainer: "locationslistcontainer"
+            list: "locationslistcontainer",
+            mapButton: 'locationslistcontainer [name=mapButton]',
+            menuButton: 'locationslistcontainer [name=menuButton]',
+            list: 'locationslistcontainer [name=list]'
         },
         control: {
-            locationsListContainer: {
-                // The commands fired by the notes list container.
-                goToMap: "goToMapCommand",
-                showItem: "showItemOnMapCommand"
+            mapButton: {
+                tap: 'onMapButtonTap'
+            },
+            menuButton: {
+                tap: 'onMenuTap'
+            },
+            list: {
+                disclose: 'onLocationsListDisclose'
             }
         }
     },
-
-    // Commands.
-    goToMap: function () {
-        Ext.Viewport.setActiveIitem(2);
-        console.log('set')
+    onMenuTap: function() {
+        Ext.Viewport.child('mainmenu').toggle();
     },
-    showItem: function (list, record) {
-        console.log("onEditNoteCommand");
+    onMapButtonTap: function () {
+        this.goToPlaceOnMap(new google.maps.LatLng(37.381592, -122.135672), 2);
+        this.showMap();
     },
-    // Base Class functions.
+    showMap : function() {
+        Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi ,{ type: 'slide', direction: 'right' });
+        Ext.Viewport.setActiveItem('mapcontainer');
+    },
+    goToPlaceOnMap : function(pos, zoom) {
+        // get mapView
+        var el = Ext.Viewport.child('mapcontainer');
+        // get map link
+        var map = el.items.getAt(1).getMap();
+        map.setCenter(pos);
+        map.setZoom(zoom);
+    },
+    onLocationsListDisclose: function (list, record, target, index, evt, options) {
+        if (record.data.latitude) {
+            var position = new google.maps.LatLng(record.data.latitude, record.data.longitude);
+            this.goToPlaceOnMap(position, 14);
+            this.showMap();
+        }
+        else Ext.Msg.alert('Error', 'Missing location coordinates', Ext.emptyFn);
+    },
     launch: function () {
         this.callParent(arguments);
         Ext.getStore("Locations").getProxy().setHeaders({Authorization: 'Basic cGl5dXNoZGFuZTpIZWxsbzEyMw=='});
         Ext.getStore("Locations").load();
-    },
-    init: function () {
-        this.callParent(arguments);
     }
 });
