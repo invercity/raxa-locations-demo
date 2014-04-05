@@ -19,6 +19,12 @@
             title: 'OpenMRS Locations',
             docked: "top",
             items: [
+                {
+                    iconCls: 'more',
+                    handler: function() {
+                        Ext.Viewport.child('mainmenu').toggle();
+                    }
+                },
                 { xtype: 'spacer' },
                 mapButton
             ]
@@ -40,11 +46,11 @@
     },
     showMap : function() {
         Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi ,{ type: 'slide', direction: 'right' });
-        Ext.Viewport.setActiveItem(2);
+        Ext.Viewport.setActiveItem('mapcontainer');
     },
     goToPlaceOnMap : function(pos, zoom) {
         // get map
-        var el = Ext.Viewport.items.getAt(2);
+        var el = Ext.Viewport.child('mapcontainer');
         var map = el.items.getAt(1).getMap();
         map.setCenter(pos);
         map.setZoom(zoom);

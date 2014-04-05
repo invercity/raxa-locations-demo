@@ -57,7 +57,7 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                 cls: 'login-btn',
                 text: 'Log In',
                 handler: function() {
-                    Ext.Viewport.setActiveItem(1);
+                    Ext.Viewport.setActiveItem('locationslistcontainer');
                 }
             }
         ]
