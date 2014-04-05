@@ -15,7 +15,7 @@ Ext.define('LocationsDemo.controller.Login', {
             loginButtonCt: 'logincontainer [name=loginButton]'
         },
         control : {
-            'loginButtonCt' : {
+            loginButtonCt : {
                 tap: 'onLoginTap'
             }
         }
