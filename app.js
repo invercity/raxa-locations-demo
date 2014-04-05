@@ -20,7 +20,7 @@
     },
     models: ["Location"],
     stores: ["Locations"],
-    controllers: ["Locations","Map"],
+    controllers: ["Locations","Map", "Login"],
     views: ["LocationsList", "LocationsListContainer", "MapContainer", "LoginContainer", "MenuContainer"],
 
     launch: function () {

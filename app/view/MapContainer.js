@@ -7,6 +7,8 @@ Ext.define("LocationsDemo.view.MapContainer", {
 
     initialize: function () {
 
+        this.callParent(arguments);
+
         var backButton = {
             xtype: "button",
             text: 'Back',
