@@ -37,6 +37,7 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                                 xtype: 'textfield',
                                 placeHolder: 'Login',
                                 name: 'login',
+                                id: 'loginField',
                                 required: true,
                                 cls: 'login'
                             },
@@ -58,5 +59,13 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                 text: 'Log In'
             }
         ]
+    },
+    initialize: function() {
+        this.callParent(arguments);
+        var config = this.getInitialConfig();
+        // check it in future
+        if (config.username) {
+            this.getById('loginField').setValue(config.username);
+        }
     }
 });

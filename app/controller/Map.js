@@ -2,7 +2,6 @@
  * Created by invercity on 3/19/14.
  */
 Ext.define("LocationsDemo.controller.Map", {
-
     extend: "Ext.app.Controller",
     config: {
         refs: {
@@ -18,6 +17,7 @@ Ext.define("LocationsDemo.controller.Map", {
             }
         }
     },
+
     onMapRender: function(comp, map) {
         var store = Ext.getStore("Locations");
         store.load({
@@ -40,12 +40,9 @@ Ext.define("LocationsDemo.controller.Map", {
             }
         })
     },
+
     onBackTap: function () {
         Ext.Viewport.animateActiveItem(Ext.Viewport.currentUi,{ type: 'slide', direction: 'left' });
         Ext.Viewport.setActiveItem('locationslistcontainer');
-    },
-    // Base Class functions.
-    launch: function () {
-        this.callParent(arguments);
     }
 });

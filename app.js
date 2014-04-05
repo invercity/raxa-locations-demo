@@ -1,4 +1,6 @@
 ﻿Ext.application({
+    // session timeout = 1 hour;
+    sessionTimeout: 1000 * 60 * 60 * 1,
     name: "LocationsDemo",
     requires: [
         'Ext.MessageBox'
@@ -18,31 +20,57 @@
         '1536x2008': 'resources/startup/1536x2008.png',
         '1496x2048': 'resources/startup/1496x2048.png'
     },
-    models: ["Location"],
-    stores: ["Locations"],
-    controllers: ["Locations","Map", "Login"],
-    views: ["LocationsList", "LocationsListContainer", "MapContainer", "LoginContainer", "MenuContainer"],
+    models: ["Location", "CurrentUser"],
+    stores: ["Locations", "CurrentUser"],
+    controllers: ["Locations", "Map", "Login", "Menu"],
+    views: ["LocationsList", "MapContainer", "LocationsListContainer" ,"LoginContainer", "MenuContainer"],
 
     launch: function () {
+        // enable loader config
         Ext.Loader.setConfig({enabled: true});
+        // add additional css
         Ext.Viewport.innerElement.addCls('viewport-inner');
-        // Destroy the #appLoadingIndicator element
+        // destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
-        var locationsListContainer = {
-            xtype: "locationslistcontainer"
-        };
-        var mapContainer = {
-            xtype: "mapcontainer"
-        };
-        var loginContainer = {
-            xtype: "logincontainer"
-        };
-        var menuContainer = {
-            xtype: 'mainmenu'
+        // check login form
+        var loginContainer = Ext.Viewport.child('logincontainer');
+        // if it is not created before
+        if (!loginContainer) {
+            // create it
+            loginContainer = Ext.create('LocationsDemo.view.LoginContainer');
+            // add to viewport
+            Ext.Viewport.add(loginContainer);
         }
-        Ext.Viewport.add(loginContainer);
+    },
+
+    logIn: function(config) {
+        // remove previous views
+        Ext.Viewport.removeAll();
+        // locations
+        var locationsContainer;
+        // check config
+        if (config) locationsContainer = Ext.create('LocationsDemo.view.LocationsListContainer', config);
+        // if there no config - create list without config
+        else locationsContainer = Ext.create('LocationsDemo.view.LocationsListContainer');
+        // create other views
+        var mapContainer = Ext.create('LocationsDemo.view.MapContainer');
+        var menuContainer = Ext.create('LocationsDemo.view.MenuContainer');
+        // add created views
+        Ext.Viewport.add(locationsContainer);
         Ext.Viewport.add(menuContainer);
-        Ext.Viewport.add(locationsListContainer);
         Ext.Viewport.add(mapContainer);
+        // set locations as active item
+        Ext.Viewport.setActiveItem(locationsContainer);
+    },
+
+    logOut:function(config) {
+        // create login view
+        var loginContainer = Ext.create('LocationsDemo.view.LoginContainer', config);
+        // remove other views
+        Ext.Viewport.removeAll();
+        // add login view
+        Ext.Viewport.add(loginContainer);
+        // set login view as active item
+        Ext.Viewport.setActiveItem(loginContainer);
     }
 });

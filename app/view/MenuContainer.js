@@ -4,6 +4,7 @@
 Ext.define('LocationsDemo.view.MenuContainer',{
     extend: 'Ext.Container',
     xtype: 'mainmenu',
+    alias: "widget.menucontainer",
     config: {
         cls: 'mainmenu',
         docked: 'left',
@@ -39,14 +40,10 @@ Ext.define('LocationsDemo.view.MenuContainer',{
         },{
             text: 'Logout',
             ui: 'mainmenu',
-            handler: function() {
-                Ext.Viewport.child('mainmenu').toggle();
-                Ext.Viewport.setActiveItem('logincontainer');
-            },
+            name: 'logoutButton',
             iconCls: 'ico-logout'
         }]
     },
-
     setParent: function(parent) {
         this.callParent(arguments);
         this.maskCmp = parent.add({
