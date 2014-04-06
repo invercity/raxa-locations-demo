@@ -95,7 +95,8 @@ Ext.define("LocationsDemo.view.LoginContainer", {
         var config = this.getInitialConfig();
         // check it in future
         if (config.username) {
-            this.getById('loginField').setValue(config.username);
+            // will be updated later
+            //this.getById('loginField').setValue(config.username);
         }
     }
 });
