@@ -35,6 +35,9 @@ Ext.define('LocationsDemo.controller.Login', {
             Ext.getStore("Locations").load({callback: function(records, operation, success) {
                 // hide wait indicator
                 _this.getLoginWaitCt().setHidden(true);
+                // change text
+                // change text
+                _this.getLoginButtonCt().setHidden(false);
                 // if load success - login is OK
                 if (!success) _this.handleLoginFailure();
                 // if not - login failure
@@ -54,7 +57,9 @@ Ext.define('LocationsDemo.controller.Login', {
         var login = this.getLoginCt();
         var pass = this.getPasswordCt();
         // show wait
-        //this.getLoginWaitCt().setHidden(false);
+        this.getLoginWaitCt().setHidden(false);
+        // change text
+        this.getLoginButtonCt().setHidden(true);
         // check login & pass
         this.checkCredentials(login.getValue(), pass.getValue());
     },

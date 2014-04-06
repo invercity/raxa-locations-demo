@@ -31,6 +31,8 @@ Ext.define("LocationsDemo.controller.Menu", {
                             // delete user from model
                             user.erase({
                                 success: function() {
+                                    // clear data from store
+                                    Ext.getStore("Locations").data.clear();
                                     // logout app
                                     LocationsDemo.app.logOut({
                                         username: login

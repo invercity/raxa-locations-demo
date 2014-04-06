@@ -3,7 +3,6 @@
     extend: "Ext.app.Controller",
     config: {
         refs: {
-            list: "locationslistcontainer",
             mapButton: 'locationslistcontainer [name=mapButton]',
             menuButton: 'locationslistcontainer [name=menuButton]',
             list: 'locationslistcontainer [name=list]'

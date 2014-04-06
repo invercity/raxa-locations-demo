@@ -6,11 +6,11 @@
     config: {
         model: "LocationsDemo.model.Location",
         proxy: {
-            type: 'ajax',
+            type: 'rest',
             url: 'https://api.raxa.io/ws/rest/v1/location?v=full&limit=100',
             reader:{
                 type: 'json',
-                root: 'results'
+                rootProperty: 'results'
             }
         },
         autoLoad: false
