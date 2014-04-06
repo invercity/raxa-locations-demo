@@ -11,7 +11,9 @@ Ext.define('LocationsDemo.controller.Login', {
         refs : {
             loginCt: 'logincontainer [name=login]',
             passwordCt: 'logincontainer [name=password]',
-            loginButtonCt: 'logincontainer [name=loginButton]'
+            loginButtonCt: 'logincontainer [name=loginButton]',
+            loginWaitCt: 'logincontainer [name=signInWait]',
+            loginFailedCt: 'logincontainer [name=signInFailed]'
         },
         control : {
             loginButtonCt : {
@@ -31,6 +33,8 @@ Ext.define('LocationsDemo.controller.Login', {
             // set headers, and try to load
             Ext.getStore("Locations").getProxy().setHeaders({Authorization: hash});
             Ext.getStore("Locations").load({callback: function(records, operation, success) {
+                // hide wait indicator
+                _this.getLoginWaitCt().setHidden(true);
                 // if load success - login is OK
                 if (!success) _this.handleLoginFailure();
                 // if not - login failure
@@ -38,7 +42,10 @@ Ext.define('LocationsDemo.controller.Login', {
             }});
         }
         // maybe replace it with Msg
-        else _this.handleLoginFailure();
+        else {
+            _this.getLoginWaitCt().setHidden(true);
+            _this.handleLoginFailure();
+        }
     },
 
     onLoginTap: function() {
@@ -46,6 +53,8 @@ Ext.define('LocationsDemo.controller.Login', {
         // get items
         var login = this.getLoginCt();
         var pass = this.getPasswordCt();
+        // show wait
+        this.getLoginWaitCt().setHidden(false);
         // check login & pass
         this.checkCredentials(login.getValue(), pass.getValue());
     },
@@ -73,7 +82,7 @@ Ext.define('LocationsDemo.controller.Login', {
         // clear it
         passwordCt.setValue('');
         // make alert message
-        Ext.Msg.alert('Error', 'We could not log you in.', Ext.emptyFn);
+        Ext.Msg.alert('Error', 'Incorrect authorization data', Ext.emptyFn);
     },
 
     logUserIn : function(savedCurrentUser) {

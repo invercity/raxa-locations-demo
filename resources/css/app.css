@@ -155,7 +155,7 @@ right: 0.44em;
 .login-view .login-btn {
     width: 14em;
     border: none;
-    margin-bottom: 6em;
+    margin-bottom: 1em;
     min-height: 2.2em;
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eaebec), color-stop(100%, #b9bfc7));
     background-image: -webkit-linear-gradient(#eaebec, #b9bfc7);

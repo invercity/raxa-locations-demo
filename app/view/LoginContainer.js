@@ -18,15 +18,6 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                 cls: 'logo'
             },
             {
-                xtype: 'label',
-                html: 'Login failed. Please enter the correct credentials.',
-                itemId: 'signInFailedLabel',
-                hidden: true,
-                hideAnimation: 'fadeOut',
-                showAnimation: 'fadeIn',
-                style: 'color:#990000;margin:5px 0px;'
-            },
-            {
                 xtype: 'formpanel',
                 scrollable: null,
                 items: [
@@ -57,6 +48,23 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                 name: 'loginButton',
                 cls: 'login-btn',
                 text: 'Log In'
+            },
+            {
+                xtype: 'label',
+                html: 'Login failed. Please enter the correct credentials.',
+                itemId: 'signInFailed',
+                name: 'signInFailed',
+                hidden: true,
+                hideAnimation: 'fadeOut',
+                showAnimation: 'fadeIn',
+                style: 'color:#990000;margin:5px 0px;'
+            },
+            {
+                xtype: 'panel',
+                hidden: true,
+                itemId: 'signInWait',
+                name: 'signInWait',
+                html: '<img src="../../resources/icons/load.gif" width="30px" height="30px">'
             }
         ]
     },
