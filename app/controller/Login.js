@@ -35,19 +35,22 @@ Ext.define('LocationsDemo.controller.Login', {
             Ext.getStore("Locations").load({callback: function(records, operation, success) {
                 // hide wait indicator
                 _this.getLoginWaitCt().setHidden(true);
-                // change text
-                // change text
+                // show login burron
                 _this.getLoginButtonCt().setHidden(false);
                 // if load success - login is OK
-                if (!success) _this.handleLoginFailure();
+                if (!success) _this.handleLoginFailure('Incorrect authorization data');
                 // if not - login failure
                 else _this.handleLoginSuccess(username, hash);
             }});
         }
         // maybe replace it with Msg
         else {
+            // show login button
+            _this.getLoginButtonCt().setHidden(false);
+            // hide login indicator
             _this.getLoginWaitCt().setHidden(true);
-            _this.handleLoginFailure();
+            // show message
+            _this.handleLoginFailure('Some fields are empty');
         }
     },
 
@@ -81,13 +84,13 @@ Ext.define('LocationsDemo.controller.Login', {
         }, this);
     },
 
-    handleLoginFailure : function() {
+    handleLoginFailure : function(text) {
         // get password item
         var passwordCt = this.getPasswordCt();
         // clear it
         passwordCt.setValue('');
         // make alert message
-        Ext.Msg.alert('Error', 'Incorrect authorization data', Ext.emptyFn);
+        Ext.Msg.alert('Error', text, Ext.emptyFn);
     },
 
     logUserIn : function(savedCurrentUser) {
