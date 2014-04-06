@@ -54,7 +54,7 @@ Ext.define('LocationsDemo.controller.Login', {
         var login = this.getLoginCt();
         var pass = this.getPasswordCt();
         // show wait
-        this.getLoginWaitCt().setHidden(false);
+        //this.getLoginWaitCt().setHidden(false);
         // check login & pass
         this.checkCredentials(login.getValue(), pass.getValue());
     },
