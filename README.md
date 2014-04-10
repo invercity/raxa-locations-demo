@@ -5,9 +5,11 @@ raxa-locations-demo
 #### Functions:
 
 * Loading places, and showing it in the list
+* Authorization on RAXA
 * Displaying places on a map
 
 #### To-do
 
 * Search/filter tool
-* Login form
+* Additional resources (Google Places)
+
