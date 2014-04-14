@@ -5,9 +5,14 @@
         refs: {
             mapButton: 'locationslistcontainer [name=mapButton]',
             menuButton: 'locationslistcontainer [name=menuButton]',
-            list: 'locationslistcontainer [name=list]'
+            list: 'locationslistcontainer [name=list]',
+            searchField: 'locationslistcontainer > toolbar > searchfield'
         },
         control: {
+            searchField: {
+                change: 'onSearch',
+                clearicontap: 'onSearch'
+            },
             mapButton: {
                 tap: 'onMapButtonTap'
             },
@@ -18,6 +23,19 @@
                 disclose: 'onLocationsListDisclose'
             }
         }
+    },
+
+    onSearch: function() {
+        var searchField = this.getSearchField();
+        var store = Ext.getStore('Locations'),
+            value = Ext.String.trim(searchField.getValue());
+        store.removeAll();
+        store.clearFilter(true);
+        store.getProxy().setExtraParam('q', value);
+        store.load();
+        // update map
+        Ext.Viewport.remove(Ext.Viewport.child('mapcontainer'));
+        Ext.Viewport.add(Ext.create('LocationsDemo.view.MapContainer'));
     },
 
     onMenuTap: function() {

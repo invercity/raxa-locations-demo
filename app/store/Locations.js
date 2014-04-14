@@ -5,9 +5,15 @@
     ],
     config: {
         model: "LocationsDemo.model.Location",
+        remoteFilter: true,
         proxy: {
-            type: 'rest',
-            url: 'https://api.raxa.io/ws/rest/v1/location?v=full&limit=100',
+            type: 'ajax',
+            extraParams: {
+                v: 'full',
+                limit: 100,
+                q: ''
+            },
+            url: 'https://api.raxa.io/ws/rest/v1/location',
             reader:{
                 type: 'json',
                 rootProperty: 'results'

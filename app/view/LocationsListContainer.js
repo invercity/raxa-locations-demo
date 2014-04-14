@@ -28,11 +28,6 @@
                 }
             ]
         };
-        var bottomToolbar = {
-            xtype: "toolbar",
-            docked: "bottom",
-            items: []
-        };
         // create locations list
         var locationsList = {
             xtype: "locationslist",
