@@ -8,7 +8,7 @@
         // create toolbar
         var topToolbar = {
             xtype: "toolbar",
-            title: 'OpenMRS Locations',
+            //title: 'OpenMRS Locations',
             docked: "top",
             items: [
                 {
@@ -16,7 +16,9 @@
                     name: 'menuButton'
                 },
                 {
-                    xtype: 'spacer'
+                    xtype: 'searchfield',
+                    placeHolder: 'Search by keywords...',
+                    flex: 1
                 },
                 {
                     xtype: "button",
@@ -26,6 +28,11 @@
                 }
             ]
         };
+        var bottomToolbar = {
+            xtype: "toolbar",
+            docked: "bottom",
+            items: []
+        };
         // create locations list
         var locationsList = {
             xtype: "locationslist",
@@ -33,7 +40,7 @@
             name: 'list'
         };
         // add components to view
-        this.add([topToolbar, locationsList]);
+        this.add([topToolbar, locationsList/*, bottomToolbar*/]);
         // get configuration
         var config = this.getInitialConfig();
         // check hash and load data

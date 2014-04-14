@@ -1,90 +1,52 @@
-html {
-  padding: 1em;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dddddd), color-stop(100%, #ffffff)) no-repeat;
-  background: -webkit-linear-gradient(#dddddd, #ffffff) no-repeat;
-  background: -moz-linear-gradient(#dddddd, #ffffff) no-repeat;
-  background: -o-linear-gradient(#dddddd, #ffffff) no-repeat;
-  background: -ms-linear-gradient(#dddddd, #ffffff) no-repeat;
-  background: linear-gradient(#dddddd, #ffffff) no-repeat;
-}
+/*
+Syntax error: File to import not found or unreadable: tests.
+              Load path: /home/invercity/projects/webstorm/raxa-locations-demo/touch/resources/themes/vendor/compass-recipes/tests/recipes/shape/ellipse
+        on line 1 of s.scss
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 1em;
-}
+1: @import "tests";
+2: 
+3: @import "recipes/shape/ellipse";
+4: @import "compass/css3/transform";
+5: 
+6: div
 
-h2 {
-  font-size: 1.4em;
-  margin-bottom: .6em;
-}
-
-.doc {
-  background: #fff;
-  border: #ddd;
-  padding: 1em;
-  color: #aaa;
-  margin: 1em;
-  font-style: italic;
-}
-.doc a {
-  color: #999;
-}
-
-/**
- * Shape/Ellipse
- *
- * @author Maxime Thirouin maxime.thirouin@gmail.com @MoOx
- */
-div {
-  background: #000;
-  margin: 4em auto;
-}
-
-.circle {
-  width: 10em;
-  height: 10em;
-  -moz-border-radius: 5em;
-  -webkit-border-radius: 5em;
-  -o-border-radius: 5em;
-  -ms-border-radius: 5em;
-  -khtml-border-radius: 5em;
-  border-radius: 5em;
-}
-
-.ellipse-h {
-  width: 20em;
-  height: 10em;
-  -webkit-border-radius: 10em 5em;
-  -moz-border-radius: 10em / 5em;
-  -o-border-radius: 10em / 5em;
-  -ms-border-radius: 10em / 5em;
-  -khtml-border-radius: 10em / 5em;
-  border-radius: 10em / 5em;
-}
-
-.ellipse-v {
-  width: 10em;
-  height: 20em;
-  -webkit-border-radius: 5em 10em;
-  -moz-border-radius: 5em / 10em;
-  -o-border-radius: 5em / 10em;
-  -ms-border-radius: 5em / 10em;
-  -khtml-border-radius: 5em / 10em;
-  border-radius: 5em / 10em;
-}
-
-.ellipse-nw {
-  width: 20em;
-  height: 10em;
-  -webkit-border-radius: 10em 5em;
-  -moz-border-radius: 10em / 5em;
-  -o-border-radius: 10em / 5em;
-  -ms-border-radius: 10em / 5em;
-  -khtml-border-radius: 10em / 5em;
-  border-radius: 10em / 5em;
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
+Backtrace:
+s.scss:1
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:45:in `import'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:28:in `imported_file'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:37:in `css_import?'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/engine.rb:315:in `_render'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/engine.rb:262:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/plugin/compiler.rb:201:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/plugin.rb:81:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/exec.rb:443:in `watch_or_update'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/exec.rb:326:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/exec.rb:41:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/lib/sass/exec.rb:21:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.2.18/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: tests.\A               Load path: /home/invercity/projects/webstorm/raxa-locations-demo/touch/resources/themes/vendor/compass-recipes/tests/recipes/shape/ellipse\A         on line 1 of s.scss\A \A 1: @import \"tests\";\A 2: \A 3: @import \"recipes/shape/ellipse\";\A 4: @import \"compass/css3/transform\";\A 5: \A 6: div"; }

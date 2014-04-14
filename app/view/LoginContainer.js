@@ -77,7 +77,6 @@ Ext.define("LocationsDemo.view.LoginContainer", {
                 cls: 'login-btn',
                 text: 'Log In'
             },
-
             {
                 xtype: 'label',
                 html: 'Login failed. Please enter the correct credentials.',
